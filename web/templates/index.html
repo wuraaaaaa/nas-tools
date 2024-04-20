@@ -15,6 +15,13 @@
       {% endfor %}
       <div class="col-auto ms-auto d-print-none">
         <div class="btn-list">
+          <a href="https://github.com/wuraaaaaa/nas-tools" class="btn btn-primary d-none d-sm-inline-block">
+            {{ SVG.brand_github() }}
+            github
+          </a>
+          <a href="https://github.com/wuraaaaaa/nas-tools" class="btn btn-primary d-sm-none btn-icon">
+            {{ SVG.brand_github() }}
+          </a>
           <a href="javascript:show_mediasync_modal()" class="btn btn-primary d-none d-sm-inline-block">
             {{ SVG.refresh() }}
             媒体库同步
