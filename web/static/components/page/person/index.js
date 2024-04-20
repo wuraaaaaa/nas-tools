@@ -44,7 +44,7 @@ export class PagePerson extends CustomElement {
       <div class="page-body">
         <div class="container-xl">
           ${this.person_list.length !== 0
-          ? html`<div class="d-grid gap-3 grid-media-card">
+          ? html`<div class="d-grid gap-4 grid-media-card">
             ${this.person_list.map((item, index) => ( html`
               <person-card
                 person-id=${item.id}
@@ -64,7 +64,7 @@ export class PagePerson extends CustomElement {
                 <p class="empty-title">没有数据。</p>
               </div>
             </div>` 
-          : html`<div class="d-grid gap-3 grid-media-card">${Array(20).fill(html`<person-card lazy="1"></person-card>`)}</div>`
+          : html`<div class="d-grid gap-4 grid-media-card">${Array(20).fill(html`<person-card lazy="1"></person-card>`)}</div>`
           }
           </div>            
         </div>
