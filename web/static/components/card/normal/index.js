@@ -55,6 +55,17 @@ export class NormalCard extends observeState(CustomElement) {
     }
   }
 
+  _render_left_down() {
+    let color;
+    color = "bg-blue";
+    return html`
+      <span class="badge badge-pill ${color}" style="position: absolute; bottom: 10px; left: 10px">
+          ${this.title}
+        </span>`;
+  }
+
+
+
   _render_right_up() {
      if (this.fav == "2") {
       return html`
@@ -125,6 +136,7 @@ export class NormalCard extends observeState(CustomElement) {
              @load=${() => { this._placeholder = false }}/>
           ${this._render_left_up()}
           ${this._render_right_up()}
+          ${this._render_left_down()}
         </div>
         <div ?hidden=${cardState.more_id != this._card_id && this._card_image_error == false}
              class="card-img-overlay rounded-3 ms-auto"
