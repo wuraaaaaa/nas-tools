@@ -64,6 +64,13 @@ export class NormalCard extends observeState(CustomElement) {
         </span>`;
   }
 
+  _render_center() {
+    return html`
+      <div class="m-2 text-center" style="-webkit-line-clamp:1; display: -webkit-box; -webkit-box-orient:vertical; overflow:hidden; text-overflow: ellipsis;">
+          ${this.title}
+        </div>`;
+  }
+
 
 
   _render_right_up() {
@@ -134,9 +141,9 @@ export class NormalCard extends observeState(CustomElement) {
              src=${this.lazy == "1" ? "" : this.image ?? Golbal.noImage}
              @error=${() => { if (this.lazy != "1") {this.image = Golbal.noImage; this._card_image_error = true} }}
              @load=${() => { this._placeholder = false }}/>
+          ${this._render_center()}
           ${this._render_left_up()}
           ${this._render_right_up()}
-          ${this._render_left_down()}
         </div>
         <div ?hidden=${cardState.more_id != this._card_id && this._card_image_error == false}
              class="card-img-overlay rounded-3 ms-auto"
